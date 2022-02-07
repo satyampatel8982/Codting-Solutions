@@ -44,14 +44,6 @@ Solution :
 
 using namespace std;
 
-int min(int a, int b){
-    return a < b ? a : b;
-}
-
-int max(int a, int b){
-    return a > b ? a : b;
-}
-
 int isPrime(int num){
     // logic of prime Number
     for(int i = 2; i * i <= num; ++i ){
