@@ -37,7 +37,7 @@ Solution :
     odd + even = odd   1 + 2 = 3 
     odd + odd = even   1 + 1 = 2
 
-
+(Use C++ Compiler) Code Writen in C++ Programming language.
 *******************************************************************************/
 // Header file 
 #include<iostream>
@@ -46,7 +46,7 @@ using namespace std;
 
 int isPrime(int num){
     // logic of prime Number
-    for(int i = 2; i * i <= num; ++i ){
+    for(int i = 2; i * i <= num; i++ ){
         if (num % i == 0)   
             return 0;
     }
@@ -68,13 +68,14 @@ void solve(int N){
             return;
         }
     }
+    
     for(int i = 3; i <= N/2 && (N - i) != 2 ; i += 2 ){
-        if ( isPrime(N-i) ){
+        if ( isPrime(i) && isPrime(N - i) ){
             if( i < N - i ){     // only printing logic Nothing about to worry
                 cout<<i<<" "<<N-i;
             }
             else{
-                cout<<N - i<<" "<<i; // for making lexicographically order print small then large
+                cout<<N - i<<" "<<i; // for making lexicographically order print small then large value
             }
             return;
         }
@@ -83,12 +84,12 @@ void solve(int N){
 }
 int main()
 {
-    int Num;
+    int Num; 
     
     cin>>Num;
-        
+       
     solve(Num);
-    
+
     return 0;
 }
 
